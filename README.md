@@ -1,36 +1,46 @@
 
-  # n
-  ISC1
+  # asdf
+  [<img src="https://img.shields.io/badge/License-ISC-blue.svg">](https://www.isc.org/licenses/)
 
-  ## Table of contents
-  [Description](#description)
-  [Installation](#installation)
-  [Usage](#usage)
-  [Credits](#credits)
-  [ContactMe](#contactme)
-  [License](#license)
+  ## Table of contents  
+  [Description](#description)  
+  [Installation](#installation)  
+  [Usage](#usage)  
+  [Contributing](#contributing)  
+  [ContactMe](#contactme)  
+  [License](#license)  
 
   ## Description
-  n
+  My reasons for building this project:  
+  asdf
 
   ## Installation
-  n
+  The steps required to install this project:  
+  asdf
 
   ## Usage
-  n
+  Examples for use:  
+  asdf
 
-  ## Credits
-  undefined
-  undefined
+  ## Contributing
+  
+  [GitHub](https://github.com/octocat)  
+    [Cassandra Hardin](https://github.com/cassadoes)  
+    [William Stock](https://github.com/wist118)  
+    
+    
+
 
   ## ContactMe
-  n
-  n
-  n
+  Contact me for additional questions or for ways you can contribute to this projects!  
+  William Stock  
+  GitHub: (https://github.com/wist118/)  
+  Email: william@yahoo.com
+  
 
   ## Tests
-  n
+  asdf
 
   ## License
-  ISC2
+  Licensed by the [ISC](https://www.isc.org/licenses/) license.
 

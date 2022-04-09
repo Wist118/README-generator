@@ -5,6 +5,42 @@ const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 
+const creditPrompt = creditInput => {
+    if (!creditInput.contributor) {
+        creditInput.contributor = [];
+    }
+    return inquirer.prompt([
+
+        {
+            type: 'confirm',
+            name: 'confirmCollab',
+            message: 'Were there any collaborators on this project?',
+            default: true
+        },
+        {
+            type: 'input',
+            name: 'collab',
+            message: "Please enter the collaborator's first and last name",
+            when: ({ confirmCollab }) => confirmCollab
+        },
+        {
+            type: 'input',
+            name: 'collabGithub',
+            message: "Please enter the collaborator's github username",
+            when: ({ confirmCollab }) => confirmCollab
+        }
+    ])
+
+    .then(creditInfo => {
+        creditInput.contributor.push(creditInfo);
+        if (creditInfo.confirmCollab) {
+            return creditPrompt(creditInput)
+        } else {
+            return creditInput;
+        }
+    });
+};
+
 const descriptionPrompt = () => {
     return inquirer.prompt([
         {
@@ -56,28 +92,10 @@ const descriptionPrompt = () => {
             } 
         },
         {
-            type: 'confirm',
-            name: 'confirmCollab',
-            message: 'Were there any collaborators on this project?',
-            default: true
-        },
-        {
-            type: 'input',
-            name: 'collab',
-            message: "Please enter the collaborator's first and last name",
-            when: ({ confirmCollab }) => confirmCollab
-        },
-        {
-            type: 'input',
-            name: 'collabGithub',
-            message: "Please enter the collaborator's first and last name",
-            when: ({ confirmCollab }) => confirmCollab
-        },
-        {
             type: 'list',
             name: 'license',
             message: 'Please select your project license. (Required)',
-            choices: ['ISC', 'MIT', '0BSD', 'Fair', 'UNLICENSED'],
+            choices: ['ISC', 'MIT', 'Perl', 'IBM'],
             validate: licenseInput => {
                 if (licenseInput) {
                     return true;
@@ -137,12 +155,24 @@ const descriptionPrompt = () => {
     ]);
 };
 
-descriptionPrompt().then(data => {
-    fs.writeFile('./README.md', generateMarkdown(data), err => {
+descriptionPrompt()
+    .then(creditPrompt)
+    .then(creditInput => {
+
+        const readMeMd = generateMarkdown(creditInput);
+
+    fs.writeFile('./README.md', readMeMd, err => {
         if (err) throw err;
         console.log('Readme complete')
-    })
-});
+        })
+    });
+
+// descriptionPrompt().then(data => {
+//     fs.writeFile('./README.md', generateMarkdown(data), err => {
+//         if (err) throw err;
+//         console.log('Readme complete')
+//     })
+// });
 
 
 // TODO: Create a function to write README file

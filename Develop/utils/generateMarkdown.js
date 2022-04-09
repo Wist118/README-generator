@@ -4,16 +4,16 @@ function renderLicenseBadge(license) {
   let userLicense = '';
 
   if (license == 'ISC') {
-    userLicense = `ISC1`
+    userLicense = `[<img src="https://img.shields.io/badge/License-ISC-blue.svg">](https://www.isc.org/licenses/)`
   } 
   else if (license == 'MIT') {
-    userLicense = `MIT1`
+    userLicense = `[<img src="https://img.shields.io/badge/License-MIT-yellow.svg">](https://www.mit.edu/~amini/LICENSE.md)`
   }
-  else if (license == '0BSD') {
-    userLicense = `0BSD1`
+  else if (license == 'Perl') {
+    userLicense = `[<img src="https://img.shields.io/badge/License-Perl-0298c3.svg">](https://dev.perl.org/licenses/)`
   }
-  else if (license == 'Fair') {
-    userLicense = `Fair1`
+  else if (license == 'IBM') {
+    userLicense = `[<img src="https://img.shields.io/badge/License-IPL_1.0-blue.svg">](https://www-40.ibm.com/software/sla/sladb.nsf)`
   }
   else {
     userLicense = ''
@@ -27,16 +27,16 @@ function renderLicenseLink(license) {
   let licenseLink = '';
 
   if (license == 'ISC') {
-    licenseLink = `ISC2`
+    licenseLink = `[ISC](https://www.isc.org/licenses/)`
   } 
   else if (license == 'MIT') {
-    licenseLink = `MIT2`
+    licenseLink = `[MIT](https://www.mit.edu/~amini/LICENSE.md)`
   }
-  else if (license == '0BSD') {
-    licenseLink = `0BSD2`
+  else if (license == 'Perl') {
+    licenseLink = `[Perl](https://dev.perl.org/licenses/)`
   }
-  else if (license == 'Fair') {
-    licenseLink = `Fair2`
+  else if (license == 'IBM') {
+    licenseLink = `[IBM](https://www-40.ibm.com/software/sla/sladb.nsf)`
   }
   else {
     licenseLink = ''
@@ -46,47 +46,71 @@ function renderLicenseLink(license) {
 
 // // TODO: Create a function that returns the license section of README
 // // If there is no license, return an empty string
-// function renderLicenseSection(license) {}
+const generateCredit = creditArr => {
+  const creditData = creditArr.filter(contributors => {
+    if (contributors.confirmCollab) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  const gitCredit = creditData.map(({ collabGithub, collab }) => {
+    return `[${collab}](https://github.com/${collabGithub})  
+    `
+  });
+
+  return `
+  ${gitCredit.join('')}
+  `;
+};
 
 // TODO: Create a function to generate markdown for README
-const generateMarkdown = (data) => {
+module.exports = generateMarkdown => {;
+const { contributor, ...data } = generateMarkdown;
+
   return `
   # ${data.title}
   ${renderLicenseBadge(data.license)}
 
-  ## Table of contents
-  [Description](#description)
-  [Installation](#installation)
-  [Usage](#usage)
-  [Credits](#credits)
-  [ContactMe](#contactme)
-  [License](#license)
+  ## Table of contents  
+  [Description](#description)  
+  [Installation](#installation)  
+  [Usage](#usage)  
+  [Contributing](#contributing)  
+  [ContactMe](#contactme)  
+  [License](#license)  
 
   ## Description
+  My reasons for building this project:  
   ${data.description}
 
   ## Installation
+  The steps required to install this project:  
   ${data.install}
 
   ## Usage
+  Examples for use:  
   ${data.usage}
 
-  ## Credits
-  ${data.collab}
-  ${data.collabGithub}
+  ## Contributing
+  ${generateCredit(contributor)}  
+
 
   ## ContactMe
-  ${data.github}
-  ${data.email}
-  ${data.name}
+  Contact me for additional questions or for ways you can contribute to this project!  
+  **${data.name}**  
+  GitHub: https://github.com/${data.github}  
+  Email: ${data.email}
+  
 
   ## Tests
   ${data.tests}
 
   ## License
-  ${renderLicenseLink(data.license)}
+  Licensed by the ${renderLicenseLink(data.license)} license.
 
 `;
 }
 
-module.exports = generateMarkdown;
+
