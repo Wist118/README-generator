@@ -1,7 +1,7 @@
 # README generator
 
 ## Purpose
-A command-line application that propmts a user question to generate a high-quality README 
+A command-line application that propmts a user questions to generate a high-quality README 
 
 ## Built With
 * JavaScript
