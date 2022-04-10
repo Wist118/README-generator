@@ -1,10 +1,9 @@
-// TODO: Include packages needed for this application
+//packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
-
+// question loop to add contributors to the README
 const creditPrompt = creditInput => {
     if (!creditInput.contributor) {
         creditInput.contributor = [];
@@ -40,7 +39,7 @@ const creditPrompt = creditInput => {
         }
     });
 };
-
+// questions for user's generated README
 const descriptionPrompt = () => {
     return inquirer.prompt([
         {
@@ -154,7 +153,7 @@ const descriptionPrompt = () => {
         }    
     ]);
 };
-
+// function to generate README with user's inputs
 descriptionPrompt()
     .then(creditPrompt)
     .then(creditInput => {
@@ -167,21 +166,3 @@ descriptionPrompt()
         })
     });
 
-// descriptionPrompt().then(data => {
-//     fs.writeFile('./README.md', generateMarkdown(data), err => {
-//         if (err) throw err;
-//         console.log('Readme complete')
-//     })
-// });
-
-
-// TODO: Create a function to write README file
-//descriptionPrompt()
-    
-
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();

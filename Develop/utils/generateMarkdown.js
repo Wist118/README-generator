@@ -1,5 +1,5 @@
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
+//function that returns a license badge based on which license is passed in
+//If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let userLicense = '';
 
@@ -21,8 +21,8 @@ function renderLicenseBadge(license) {
   return userLicense; 
 };
 
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
+//function that returns the license link
+//If there is no license, return an empty string
 function renderLicenseLink(license) {
   let licenseLink = '';
 
@@ -44,8 +44,7 @@ function renderLicenseLink(license) {
   return licenseLink; 
 }
 
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
+// function to generate user's contributors array and add more contributors to the array if chosen
 const generateCredit = creditArr => {
   const creditData = creditArr.filter(contributors => {
     if (contributors.confirmCollab) {
@@ -65,7 +64,7 @@ const generateCredit = creditArr => {
   `;
 };
 
-// TODO: Create a function to generate markdown for README
+//function to generate markdown for README
 module.exports = generateMarkdown => {;
 const { contributor, ...data } = generateMarkdown;
 
