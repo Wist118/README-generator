@@ -80,16 +80,13 @@ const { contributor, ...data } = generateMarkdown;
   [ContactMe](#contactme)  
   [License](#license)  
 
-  ## Description
-  My reasons for building this project:  
+  ## Description  
   ${data.description}
 
-  ## Installation
-  The steps required to install this project:  
+  ## Installation  
   ${data.install}
 
-  ## Usage
-  Examples for use:  
+  ## Usage  
   ${data.usage}
 
   ## Contributing

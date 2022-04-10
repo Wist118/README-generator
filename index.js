@@ -160,7 +160,7 @@ descriptionPrompt()
 
         const readMeMd = generateMarkdown(creditInput);
 
-    fs.writeFile('./README.md', readMeMd, err => {
+    fs.writeFile('./dist/README.md', readMeMd, err => {
         if (err) throw err;
         console.log('Readme complete')
         })

@@ -1,6 +1,6 @@
 
-  # asdf
-  [<img src="https://img.shields.io/badge/License-ISC-blue.svg">](https://www.isc.org/licenses/)
+  # README generator
+  [<img src="https://img.shields.io/badge/License-MIT-yellow.svg">](https://www.mit.edu/~amini/LICENSE.md)
 
   ## Table of contents  
   [Description](#description)  
@@ -11,36 +11,24 @@
   [License](#license)  
 
   ## Description
-  My reasons for building this project:  
-  asdf
+  With this project you can quickly and easily generate a README file by using a command-line application to generate one. This allows the project creator to devote more time working on the project.
+  
 
-  ## Installation
-  The steps required to install this project:  
-  asdf
+  ## Installation  
+  Must have "inquirer" package installed
 
-  ## Usage
-  Examples for use:  
-  asdf
+  ## Usage  
+  Clone repository, download dependencies, access from command-line
 
   ## Contributing
-  
-  [GitHub](https://github.com/octocat)  
-    [Cassandra Hardin](https://github.com/cassadoes)  
-    [William Stock](https://github.com/wist118)  
+  [Xandromus](https://github.com/Xandromus)  
+  [gchoi2u](https://github.com/gchoi2u) 
     
-    
-
-
   ## ContactMe
-  Contact me for additional questions or for ways you can contribute to this projects!  
-  William Stock  
-  GitHub: (https://github.com/wist118/)  
-  Email: william@yahoo.com
-  
-
-  ## Tests
-  asdf
+  Contact me for additional questions or for ways you can contribute to this project!  
+  **William Stock**  
+  GitHub: https://github.com/Wist118
 
   ## License
-  Licensed by the [ISC](https://www.isc.org/licenses/) license.
+  Licensed by the [MIT](https://www.mit.edu/~amini/LICENSE.md) license.
 
