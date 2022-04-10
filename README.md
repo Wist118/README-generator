@@ -6,7 +6,8 @@
   [Description](#description)  
   [Installation](#installation)  
   [Usage](#usage)  
-  [Contributing](#contributing)  
+  [Contributing](#contributing)
+  [Tutorial](#tutorial)  
   [ContactMe](#contactme)  
   [License](#license)  
 
@@ -22,7 +23,11 @@
 
   ## Contributing
   [Xandromus](https://github.com/Xandromus)  
-  [gchoi2u](https://github.com/gchoi2u) 
+  [gchoi2u](https://github.com/gchoi2u)
+
+  ## Tutorial
+  [Click here](https://youtu.be/Gixk98lrK38) to view YouTube tutorial  
+  ![image](https://user-images.githubusercontent.com/98563241/162597253-eba096b9-978f-401f-9ac3-14254f1bf225.png)
     
   ## ContactMe
   Contact me for additional questions or for ways you can contribute to this project!  
